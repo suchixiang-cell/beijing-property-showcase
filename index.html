@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="集团在京房产智能管理系统虚构数据只读展示版" />
+    <title>集团在京房产智能管理系统 · 虚构演示</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar showcase-header">
+        <div class="showcase-primary">
+          <div class="brand showcase-brand">
+            <p class="eyebrow">BEIJING PROPERTY OVERVIEW</p>
+            <div class="brand-line">
+              <h1>集团在京房产智能管理系统</h1>
+              <span class="demo-badge">DEMO ONLY · 测试版</span>
+            </div>
+            <p class="showcase-brand-copy">全部房产数据均为虚构演示数据</p>
+          </div>
+          <section class="showcase-metrics" aria-label="虚构房产概览">
+            <div class="showcase-metric"><span>虚构房产总数</span><strong id="metric-total">—</strong></div>
+            <div class="showcase-metric"><span>已定位</span><strong id="metric-located">—</strong></div>
+            <div class="showcase-metric"><span>未定位</span><strong id="metric-unlocated">—</strong></div>
+            <div class="showcase-metric"><span>总建筑面积</span><strong id="metric-area">—</strong></div>
+          </section>
+          <div class="search-field showcase-search">
+            <label for="property-search">搜索虚构房产</label>
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="property-search" type="search" placeholder="搜索房产名称、编号、小区或产权单位" autocomplete="off" />
+            <kbd aria-hidden="true">ENTER</kbd>
+          </div>
+        </div>
+        <div class="showcase-disclosure">成果展示版 · 仅供功能演示</div>
+        <section id="property-filters" class="property-filters" aria-label="房产筛选"></section>
+      </header>
+
+      <main class="workspace mobile-view-map">
+        <nav class="mobile-view-switch" aria-label="移动端展示视图">
+          <button id="mobile-map-view" type="button" aria-pressed="true">地图</button>
+          <button id="mobile-list-view" type="button" aria-pressed="false">列表 <span id="mobile-list-count">0</span></button>
+        </nav>
+
+        <aside class="property-sidebar" aria-label="虚构演示房产列表">
+          <header class="sidebar-heading">
+            <div>
+              <p id="result-heading" class="sidebar-label">全部房产</p>
+              <p id="result-count" class="result-count">共 0 套</p>
+              <p id="result-summary" class="result-summary" aria-live="polite"></p>
+            </div>
+            <div class="sidebar-tools"><button id="fit-results" type="button">查看全部点位</button></div>
+          </header>
+          <div id="unlocated-selection" class="unlocated-selection" role="status" hidden></div>
+          <div id="property-list" class="property-list"></div>
+        </aside>
+
+        <section class="property-stage" aria-label="虚构房产地图与详情">
+          <section class="map-column" aria-label="北京市虚构房产地图区域">
+            <div class="map-panel">
+              <div id="map"></div>
+              <div class="map-grid" aria-hidden="true"></div>
+              <div id="basemap-notice" class="basemap-notice" role="status" aria-live="polite" hidden></div>
+              <div id="map-result-status" class="map-result-status" role="status" aria-live="polite" hidden></div>
+              <div class="showcase-map-caption">北京范围 · 合成演示坐标 · 不代表任何真实房产位置</div>
+            </div>
+          </section>
+
+          <aside id="property-detail" class="property-detail" aria-labelledby="property-detail-heading" hidden>
+            <header class="property-detail-header">
+              <div class="mobile-detail-bar">
+                <button id="property-detail-back" type="button" aria-label="返回地图并关闭房产详情">← 返回地图</button>
+                <strong>房产详情</strong>
+                <span aria-hidden="true"></span>
+              </div>
+              <div class="property-detail-heading-row">
+                <div>
+                  <p class="eyebrow">FICTIONAL PROPERTY RECORD</p>
+                  <h2 id="property-detail-heading" tabindex="-1"></h2>
+                  <p id="property-detail-summary" class="property-detail-summary"></p>
+                </div>
+                <div class="property-detail-actions">
+                  <button id="property-detail-close" type="button" aria-label="关闭房产详情">关闭</button>
+                </div>
+              </div>
+            </header>
+            <div id="property-detail-content" class="property-detail-content"></div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <p id="showcase-announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

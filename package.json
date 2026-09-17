@@ -1,0 +1,21 @@
+{
+  "name": "beijing-property-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --configLoader runner",
+    "build": "vite build --configLoader runner",
+    "preview": "vite preview --configLoader runner",
+    "test": "node --test scripts/showcase-check.mjs",
+    "test:browser": "node scripts/showcase-browser-check.mjs",
+    "audit:source": "node scripts/source-audit.mjs",
+    "audit:public": "node scripts/showcase-build-audit.mjs"
+  },
+  "dependencies": {
+    "maplibre-gl": "6.4.1"
+  },
+  "devDependencies": {
+    "vite": "7.3.6"
+  }
+}
