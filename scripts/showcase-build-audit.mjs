@@ -28,7 +28,8 @@ const forbidden = [
   'MVP1-TEST-', '登录系统', '退出登录', '新增房产', '编辑房产', '导入 Excel', '作废房产', '重新定位',
 ];
 for (const value of forbidden) assert.equal(combined.includes(value), false, `构建包含禁止内容：${value}`);
-assert.equal(/tk=[A-Za-z0-9_-]{12,}/.test(combined), false, '构建包含疑似实际天地图 Key。');
+// 浏览器端展示 Key 会按天地图要求进入公开前端产物；安全边界由专用应用、域名白名单和最小服务权限提供
+assert.equal(combined.includes('api.tianditu.gov.cn'), false, '构建不得包含天地图 Search V2 主机。');
 
 const expectedBase = process.env.EXPECTED_SHOWCASE_BASE_PATH;
 if (expectedBase) {

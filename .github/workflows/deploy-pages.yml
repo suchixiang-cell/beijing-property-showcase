@@ -37,6 +37,7 @@ jobs:
       - name: Build for the repository subpath
         env:
           SHOWCASE_BASE_PATH: /beijing-property-showcase/
+          VITE_TIANDITU_SHOWCASE_KEY: ${{ secrets.VITE_TIANDITU_SHOWCASE_KEY }}
         run: npm run build
 
       - name: Audit the public artifact

@@ -30,7 +30,7 @@ npm run build
 
 ## 天地图显示配置
 
-未来公开部署只允许使用单独申请的浏览器端展示 Key，并通过 `VITE_TIANDITU_SHOWCASE_KEY` 注入。该 Key 必须限制到最终 `<github-account>.github.io` 主机，并只开放地图矢量与注记显示所需权限。
+公开部署使用单独申请的浏览器端展示 Key，并通过 GitHub Repository Secret `VITE_TIANDITU_SHOWCASE_KEY` 在构建时注入。该应用的域名白名单限制为 `suchixiang-cell.github.io`，并只开放地图矢量与注记显示所需权限。
 
 未配置 Key 时，应用保持可用并使用无网络底图的降级展示。Search V2、地理编码、真实地址提交和真实业务数据均被有意排除。
 
